@@ -1,0 +1,41 @@
+Code,Name,Balance,Type,"
+","
+","
+","
+","
+"
+11101,Cash,0,Assets,"
+","
+","
+","
+","
+"
+11102,SABB Bank,0,Assets,"
+",29,"
+","
+","
+"
+11103,Clearing SABB,0,Assets,"
+","
+","
+","
+","
+"
+11104,NCB Bank,0,Assets,,,,,
+11105,Clearing NCB,0,Assets,,,,,
+11106,Petty Cash,0,Assets,,,,,
+11107,Trade Receivables,0,Assets,,,,,
+11108,Unapplied Receipts,0,Assets,,,,,
+11109,Prepayment to Suppliers,0,Assets,,,,,
+11110,Capital,0,Equity,,,,,
+11111,Current Year Profit/Loss,0,Equity,,,,,
+11112,Stock in Hand,0,Assets,,,,,
+11113,Inventory AP Accruals,0,Liabilities,,,,,
+11114,Invoice Price Variance,0,Liabilities,,,,,
+11115,Trade Payables,0,Liabilities,,,,,
+11116,Trade Sales,0,Income,,,,,
+11117,Sales Discount,0,Income,,,,,
+11118,Cost of Sales,0,Expense,,,,,
+11119,VAT Paid to Supplier (Input Tax),0,Liabilities,,,,,
+11120,VAT Received from Customers (Output Tax),0,Liabilities,,,,,
+11121,VAT Clearing Account,0,Liabilities,,,,,
