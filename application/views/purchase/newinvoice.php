@@ -220,8 +220,8 @@
                             <thead>
 
                                 <tr class="item_header bg-gradient-directional-amber">
-                                    <th width="30%" class="text-center"><?php echo $this->lang->line('Item Name') ?></th>
-                                    <th width="10%" class="text-center">Item Code</th>
+                                    <th width="20%" class="text-center">Item Code</th>
+                                    <th width="20%" class="text-center"><?php echo $this->lang->line('Item Name') ?></th>
                                     <th width="8%" class="text-center"><?php echo $this->lang->line('Quantity') ?></th>
                                     <th width="10%" class="text-center"><?php echo $this->lang->line('Rate') ?></th>
                                     <th width="10%" class="text-center"><?php echo $this->lang->line('Tax') ?>(%)</th>
@@ -238,13 +238,13 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td><input type="text" class="form-control text-center" name="product_code[]"
+                                            placeholder="<?php echo $this->lang->line('Enter Product Code') ?>"
+                                            id='productcode-0'>
+                                    </td>
                                     <td><input type="text" class="form-control text-center" name="product_name[]"
                                             placeholder="<?php echo $this->lang->line('Enter Product name') ?>"
                                             id='productname-0'>
-                                    </td>
-                                    <td><input type="text" class="form-control text-center" name="product_code[]"
-                                            placeholder="<?php echo $this->lang->line('Enter Product code') ?>"
-                                            id='productcode-0'>
                                     </td>
                                     <td><input type="text" class="form-control req amnt" name="product_qty[]" id="amount-0"
                                             onkeypress="return isNumber(event)" onkeyup="rowTotal('0'), billUpyog()"

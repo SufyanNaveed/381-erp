@@ -147,8 +147,8 @@
 
                                         <tr>
                                             <th>#</th>
-                                            <th><?php echo $this->lang->line('Description') ?></th>
                                             <th class="text-xs-left"><?php echo $this->lang->line('HSN') ?></th>
+                                            <th><?php echo $this->lang->line('Description') ?></th>
                                             <th class="text-xs-left"><?php echo $this->lang->line('Rate') ?></th>
                                             <th class="text-xs-left"><?php echo $this->lang->line('Qty') ?></th>
                                             <th class="text-xs-left"><?php echo $this->lang->line('Discount') ?></th>
@@ -168,8 +168,8 @@
                                             $rate = $row['tax'] / 2;
                                             echo '<tr>
 <th scope="row">' . $c . '</th>
-                            <td>' . $row['product'] . '</td> 
-                            <td>' . $row['code'] . '</td>                          
+                            <td>' . $row['code'] . '</td>  
+                            <td>' . $row['product'] . '</td>  
                             <td>' .  $invoice['currency_code'] . amountExchange($row['price'], 0, $this->aauth->get_user()->loc) . '</td>
                              <td>' . amountFormat_general($row['qty']) . $row['unit'] . '</td>
                               <td>' . $invoice['currency_code'] . amountExchange($row['totaldiscount'], 0, $this->aauth->get_user()->loc) . ' (' . amountFormat_s($row['discount']) . $this->lang->line($invoice['format_discount']) . ')</td>
@@ -191,8 +191,8 @@
                             ?>
                                 <tr>
                                     <th>#</th>
-                                    <th><?php echo $this->lang->line('Description') ?></th>
                                     <th class="text-xs-left"><?php echo $this->lang->line('HSN') ?></th>
+                                    <th><?php echo $this->lang->line('Description') ?></th>
                                     <th class="text-xs-left"><?php echo $this->lang->line('Rate') ?></th>
                                     <th class="text-xs-left"><?php echo $this->lang->line('Qty') ?></th>
                                     <th class="text-xs-left"><?php echo $this->lang->line('Discount') ?></th>
@@ -211,8 +211,8 @@
 
                                             echo '<tr>
 <th scope="row">' . $c . '</th>
-                            <td>' . $row['product'] . '</td> 
                             <td>' . $row['code'] . '</td>                          
+                            <td>' . $row['product'] . '</td> 
                             <td>' . $invoice['currency_code'] . amountExchange($row['price'], 0, $this->aauth->get_user()->loc) . '</td>
                              <td>' . amountFormat_general($row['qty']) . $row['unit'] . '</td>
                               <td>' . $invoice['currency_code'] . amountExchange($row['totaldiscount'], 0, $this->aauth->get_user()->loc) . ' (' . amountFormat_s($row['discount']) . $this->lang->line($invoice['format_discount']) . ')</td>
@@ -233,8 +233,8 @@
                             ?>
                                 <tr>
                                     <th>#</th>
-                                    <th><?php echo $this->lang->line('Description') ?></th>
                                     <th>Code</th>
+                                    <th><?php echo $this->lang->line('Description') ?></th>
                                     <th class="text-xs-left"><?php echo $this->lang->line('Rate') ?></th>
                                     <th class="text-xs-left"><?php echo $this->lang->line('Qty') ?></th>
                                     <th class="text-xs-left"><?php echo $this->lang->line('Tax') ?></th>
@@ -251,8 +251,8 @@
                                             $sub_t += $row['price'] * $row['qty'];
                                             echo '<tr>
 <th scope="row">' . $c . '</th>
-                            <td>' . $row['product'] . '</td>   
                             <td>' . $row['code'] . '</td>                           
+                            <td>' . $row['product'] . '</td>   
                             <td>' . $invoice['currency_code'] . amountExchange($row['price'], 0, $this->aauth->get_user()->loc) . '</td>
                              <td>' . amountFormat_general($row['qty']) . $row['unit'] . '</td>
                             <td>' . $invoice['currency_code'] . amountExchange($row['totaltax'], 0, $this->aauth->get_user()->loc) . ' (' . amountFormat_s($row['tax']) . '%)</td>

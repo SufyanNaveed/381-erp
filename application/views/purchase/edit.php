@@ -208,11 +208,8 @@
 
                                 <thead>
                                     <tr class="item_header bg-gradient-directional-amber">
-                                        <th width="30%"
-                                            class="text-center"><?php echo $this->lang->line('Item Name') ?></th>
-                                            <th width="10%"
-                                            class="text-center">Item Code</th>
-                                            
+                                        <th width="20%" class="text-center">Item Code</th> 
+                                        <th width="20%" class="text-center"><?php echo $this->lang->line('Item Name') ?></th>
                                         <th width="8%" class="text-center"><?php echo $this->lang->line('Quantity') ?></th>
                                         <th width="10%" class="text-center"><?php echo $this->lang->line('Rate') ?></th>
                                         <th width="10%" class="text-center"><?php echo $this->lang->line('Tax') ?>(%)</th>
@@ -229,9 +226,9 @@
                                     <?php $i = 0;
                                     foreach ($products as $row) {
                                         echo '<tr >
-                        <td><input type="text" class="form-control" name="product_name[]" placeholder="Enter Product name or Code"  value="' . $row['product'] . '">
-                        </td>
                         <td><input type="text" class="form-control" name="product_code[]" placeholder="Enter Product  Code"  value="' . $row['code'] . '">
+                        </td>
+                        <td><input type="text" class="form-control" name="product_name[]" placeholder="Enter Product name or Code"  value="' . $row['product'] . '">
                         </td>
                         <td><input type="text" class="form-control req amnt" name="product_qty[]" id="amount-' . $i . '"
                                    onkeypress="return isNumber(event)" onkeyup="rowTotal(' . $i . '), billUpyog()"
@@ -378,7 +375,7 @@
                         <input type="hidden" value="purchase/editaction" id="action-url">
                         <input type="hidden" value="puchase_search" id="billtype">
                         <input type="hidden" value="<?php echo $i; ?>" name="counter" id="ganak">
-                        <input type="hidden" value="<span class="selectedCurrency"><?php echo $invoice['currency_code'] ?></span>" name="currency">
+                        <input type="hidden" value="<span class='selectedCurrency'><?php echo $invoice['currency_code'] ?></span>" name="currency">
 
                         <input type="hidden" value="<?= $this->common->taxhandle_edit($invoice['taxstatus']) ?>"
                             name="taxformat" id="tax_format">
@@ -387,10 +384,11 @@
                         <input type="hidden" value="<?= $invoice['taxstatus']; ?>" name="tax_handle" id="tax_status">
                         <input type="hidden" value="yes" name="applyDiscount" id="discount_handle">
 
-                        <input type="hidden" value="<?php
+                        <input type="hidden" value="<?php 
                                                     $tt = 0;
+                                                    $invoice['shipping'] = number_format($invoice['shipping']);
                                                     if ($invoice['ship_tax_type'] == 'incl') $tt = @number_format(($invoice['shipping'] - $invoice['ship_tax']) / $invoice['shipping'], 2, '.', '');
-                                                    echo amountFormat_general(number_format((($invoice['ship_tax'] / $invoice['shipping']) * 100) + $tt, 3, '.', '')); ?>"
+                                                    echo $invoice['shipping'] > 0 ? amountFormat_general(number_format((($invoice['ship_tax'] / $invoice['shipping']) * 100) + $tt, 3, '.', '')) : amountFormat_general(number_format((($invoice['ship_tax']) * 100) + $tt, 3, '.', '')); ?>"
                             name="shipRate" id="ship_rate">
                         <input type="hidden" value="<?= $invoice['ship_tax_type']; ?>" name="ship_taxtype"
                             id="ship_taxtype">
