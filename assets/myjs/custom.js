@@ -9,7 +9,7 @@ $('#addproduct').on('click', function () {
     $('#ganak').val(nxt);
     var functionNum = "'" + cvalue + "'";
 
-    var data = '<tr><td><input type="text" class="form-control" name="product_name[]" placeholder="Enter Product name or Code" id="productname-' + cvalue + '"></td><td><input type="text" class="form-control" name="product_code[]" placeholder="Enter Product Code" id="productcode-' + cvalue + '"></td>'
+    var data = '<tr><td><input type="text" class="form-control" name="product_code[]" placeholder="Enter Product Code" id="productcode-' + cvalue + '"></td><td><input type="text" class="form-control" name="product_name[]" placeholder="Enter Product name" id="productname-' + cvalue + '"></td>'
         + '<td><input type="text" class="form-control req amnt" name="product_qty[]" id="amount-' + cvalue + '" onkeypress="return isNumber(event)" onkeyup="rowTotal(' + functionNum + '), billUpyog()" autocomplete="off" value="1" inputmode="numeric">'
         + '<input type="hidden" id="alert-' + cvalue + '" value=""  name="alert[]"> </td>'
         + '<td><input type="text" class="form-control req prc" name="product_price[]" id="price-' + cvalue + '" onkeypress="return isNumber(event)" onkeyup="rowTotal(' + functionNum + '), billUpyog()" autocomplete="off" inputmode="numeric"></td>'
@@ -31,7 +31,7 @@ $('#addproduct').on('click', function () {
     $('tr.last-item-row').before(data);
     row = cvalue;
 
-    $('#productname-' + cvalue).autocomplete({
+    $('#productcode-' + cvalue).autocomplete({
         source: function (request, response) {
             $.ajax({
                 url: baseurl + 'search_products/' + billtype,
@@ -73,7 +73,7 @@ $('#addproduct').on('click', function () {
             $('#dpid-' + id[1]).val(ui.item.data[5]);
             $('#unit-' + id[1]).val(ui.item.data[6]);
             $('#hsn-' + id[1]).val(ui.item.data[7]);
-            $('#productcode-' + id[1]).val(ui.item.data[7]);
+            $('#productname-' + id[1]).val(ui.item.data[7]);
             $('#alert-' + id[1]).val(ui.item.data[8]);
             $('#serial-' + id[1]).val(ui.item.data[10]);
             rowTotal(cvalue);
@@ -906,7 +906,7 @@ $('#saman-row').on('click', '.removeProd', function () {
 
     return false;
 });
-$('#productname-0').autocomplete({
+$('#productcode-0').autocomplete({
     source: function (request, response) {
         $.ajax({
             url: baseurl + 'search_products/' + billtype,
@@ -944,7 +944,7 @@ $('#productname-0').autocomplete({
         $('#dpid-0').val(ui.item.data[5]);
         $('#unit-0').val(ui.item.data[6]);
         $('#hsn-0').val(ui.item.data[7]);
-        $('#productcode-0').val(ui.item.data[7]);
+        $('#productname-0').val(ui.item.data[7]);
         $('#alert-0').val(ui.item.data[8]);
         $('#serial-0').val(ui.item.data[10]);
         rowTotal(0);

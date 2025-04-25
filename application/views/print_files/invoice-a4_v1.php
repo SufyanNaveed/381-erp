@@ -261,6 +261,9 @@
                 #
             </td>
             <td>
+                <?php echo 'Item Code'; ?>
+            </td>
+            <td>
                 <?php echo $this->lang->line('Description') ?>
             </td>
             <td>
@@ -294,6 +297,7 @@
 
             if ($row['serial']) $row['product_des'] .= ' - ' . $row['serial'];
             echo '<tr class="item' . $flag . '">  <td>' . $n . '</td>
+                            <td>' . $row['code'] . '</td>
                             <td>' . $row['product'] . '</td>
 							<td style="width:12%;">' . amountExchange($row['price'], $invoice['multi'], $invoice['loc']) . '</td>
                             <td style="width:12%;" >' . +$row['qty'] . $row['unit'] . '</td>   ';
@@ -309,14 +313,14 @@
 
             echo '<td class="t_center">' . amountExchange($row['subtotal'], $invoice['multi'], $invoice['loc']) . '</td></tr>';
 
-            if ($row['product_des']) {
-                $cc = $cols++;
+            // if ($row['product_des']) {
+            //     $cc = $cols++;
 
-                echo '<tr class="item' . $flag . ' descr">  <td> </td>
-                            <td colspan="' . $cc . '">' . $row['product_des'] . '&nbsp;</td>
+            //     echo '<tr class="item' . $flag . ' descr">  <td> </td>
+            //                 <td colspan="' . $cc . '">' . $row['product_des'] . '&nbsp;</td>
 							
-                        </tr>';
-            }
+            //             </tr>';
+            // }
             if (CUSTOM) {
                 $p_custom_fields = $this->custom->view_fields_data($row['pid'], 4, 1);
 
